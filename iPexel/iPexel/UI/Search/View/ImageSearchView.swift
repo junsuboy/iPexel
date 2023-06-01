@@ -8,11 +8,8 @@
 import SwiftUI
  
 struct ImageSearchView: View {
-    var array = [
-        "홍준이", "바보"
-    ]
-    
     @State private var searchText = ""
+    @ObservedObject var model: ImageSearchModel = ImageSearchModel()
     
     
     var body: some View {
@@ -20,10 +17,21 @@ struct ImageSearchView: View {
             VStack {
                 SearchBar(text: $searchText)
                     .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
+                    .environmentObject(model)
                 
                 List {
-                    ForEach(array.filter{$0.hasPrefix(searchText) || searchText == ""}, id:\.self) {
-                        searchText in Text(searchText)
+//                    ForEach(array.filter{$0.hasPrefix(searchText) || searchText == ""}, id:\.self) {
+//                        searchText in Text(searchText)
+//                    }
+                    ForEach(model.photos, id: \.id) { photo in
+                        AsyncImage(url: URL(string: photo.src.medium), content: { image in
+                            image.resizable()
+                                .aspectRatio(contentMode: .fit)
+                        }, placeholder: {
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle(tint: .orange))
+                                .scaleEffect(3)
+                        })
                     }
                 } //리스트의 스타일 수정
                 .listStyle(PlainListStyle())
@@ -38,6 +46,7 @@ struct ImageSearchView: View {
 
 struct SearchBar: View {
     @Binding var text: String
+    @EnvironmentObject var model: ImageSearchModel
  
     var body: some View {
         HStack {
@@ -47,7 +56,8 @@ struct SearchBar: View {
                 TextField("Search", text: $text)
                     .foregroundColor(.primary)
                     .onSubmit {
-                        print(text)
+                        model.photos = []
+                        model.searchImage(searchText: text, page: 1)
                     }
                     .submitLabel(.search)
                     

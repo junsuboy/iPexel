@@ -16,7 +16,14 @@
 		9844AD082A272BD40046FFE7 /* PopularMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9844AD072A272BD40046FFE7 /* PopularMainView.swift */; };
 		9844AD0A2A2738CA0046FFE7 /* ImageSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9844AD092A2738CA0046FFE7 /* ImageSearchView.swift */; };
 		9844AD0E2A27399F0046FFE7 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9844AD0D2A27399F0046FFE7 /* ViewExtension.swift */; };
-		9844AD172A27415E0046FFE7 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9844AD162A27415E0046FFE7 /* Image.swift */; };
+		9844AD172A27415E0046FFE7 /* ImageVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9844AD162A27415E0046FFE7 /* ImageVo.swift */; };
+		9844AD1C2A2821ED0046FFE7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 9844AD1B2A2821ED0046FFE7 /* Alamofire */; };
+		9844AD1E2A2822B30046FFE7 /* ImageSearchApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9844AD1D2A2822B30046FFE7 /* ImageSearchApi.swift */; };
+		9844AD202A2822C00046FFE7 /* ImageSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9844AD1F2A2822C00046FFE7 /* ImageSearchRepository.swift */; };
+		9844AD232A2828F30046FFE7 /* ImageDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9844AD222A2828F30046FFE7 /* ImageDto.swift */; };
+		9844AD282A2836300046FFE7 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 9844AD272A2836300046FFE7 /* Realm */; };
+		9844AD2A2A2836300046FFE7 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9844AD292A2836300046FFE7 /* RealmSwift */; };
+		9844AD2F2A285E9E0046FFE7 /* ImageSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9844AD2E2A285E9E0046FFE7 /* ImageSearchModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +37,12 @@
 		9844AD072A272BD40046FFE7 /* PopularMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMainView.swift; sourceTree = "<group>"; };
 		9844AD092A2738CA0046FFE7 /* ImageSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchView.swift; sourceTree = "<group>"; };
 		9844AD0D2A27399F0046FFE7 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
-		9844AD162A27415E0046FFE7 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		9844AD162A27415E0046FFE7 /* ImageVo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVo.swift; sourceTree = "<group>"; };
+		9844AD1D2A2822B30046FFE7 /* ImageSearchApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchApi.swift; sourceTree = "<group>"; };
+		9844AD1F2A2822C00046FFE7 /* ImageSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchRepository.swift; sourceTree = "<group>"; };
+		9844AD222A2828F30046FFE7 /* ImageDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDto.swift; sourceTree = "<group>"; };
+		9844AD2D2A28554A0046FFE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9844AD2E2A285E9E0046FFE7 /* ImageSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +50,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9844AD2A2A2836300046FFE7 /* RealmSwift in Frameworks */,
+				9844AD282A2836300046FFE7 /* Realm in Frameworks */,
+				9844AD1C2A2821ED0046FFE7 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,8 +78,9 @@
 		9844ACED2A271ECB0046FFE7 /* iPexel */ = {
 			isa = PBXGroup;
 			children = (
-				9844AD122A2740A90046FFE7 /* Data */,
+				9844AD2D2A28554A0046FFE7 /* Info.plist */,
 				9844AD0F2A273F670046FFE7 /* UI */,
+				9844AD122A2740A90046FFE7 /* Data */,
 				9844ACF22A271ECC0046FFE7 /* Assets.xcassets */,
 				9844ACF42A271ECC0046FFE7 /* Preview Content */,
 			);
@@ -82,8 +98,8 @@
 		9844AD032A272B9E0046FFE7 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				9844AD042A272BAB0046FFE7 /* SearchMainView.swift */,
-				9844AD092A2738CA0046FFE7 /* ImageSearchView.swift */,
+				9844AD252A282F520046FFE7 /* Model */,
+				9844AD242A282F4D0046FFE7 /* View */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -107,9 +123,9 @@
 		9844AD0F2A273F670046FFE7 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				9844AD0C2A2739970046FFE7 /* Util */,
-				9844AD062A272BC90046FFE7 /* Popular */,
 				9844AD032A272B9E0046FFE7 /* Search */,
+				9844AD062A272BC90046FFE7 /* Popular */,
+				9844AD0C2A2739970046FFE7 /* Util */,
 				9844ACEE2A271ECB0046FFE7 /* iPexelApp.swift */,
 				9844ACF02A271ECB0046FFE7 /* ContentView.swift */,
 				9844AD002A2728770046FFE7 /* MainTabView.swift */,
@@ -120,9 +136,10 @@
 		9844AD122A2740A90046FFE7 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				9844AD212A2828BE0046FFE7 /* Dto */,
 				9844AD192A281F770046FFE7 /* Network */,
 				9844AD142A2740D80046FFE7 /* Repository */,
-				9844AD152A2740E00046FFE7 /* Entity */,
+				9844AD152A2740E00046FFE7 /* Vo */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -130,23 +147,50 @@
 		9844AD142A2740D80046FFE7 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				9844AD1F2A2822C00046FFE7 /* ImageSearchRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
 		};
-		9844AD152A2740E00046FFE7 /* Entity */ = {
+		9844AD152A2740E00046FFE7 /* Vo */ = {
 			isa = PBXGroup;
 			children = (
-				9844AD162A27415E0046FFE7 /* Image.swift */,
+				9844AD162A27415E0046FFE7 /* ImageVo.swift */,
 			);
-			path = Entity;
+			path = Vo;
 			sourceTree = "<group>";
 		};
 		9844AD192A281F770046FFE7 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				9844AD1D2A2822B30046FFE7 /* ImageSearchApi.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		9844AD212A2828BE0046FFE7 /* Dto */ = {
+			isa = PBXGroup;
+			children = (
+				9844AD222A2828F30046FFE7 /* ImageDto.swift */,
+			);
+			path = Dto;
+			sourceTree = "<group>";
+		};
+		9844AD242A282F4D0046FFE7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9844AD042A272BAB0046FFE7 /* SearchMainView.swift */,
+				9844AD092A2738CA0046FFE7 /* ImageSearchView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9844AD252A282F520046FFE7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9844AD2E2A285E9E0046FFE7 /* ImageSearchModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +209,11 @@
 			dependencies = (
 			);
 			name = iPexel;
+			packageProductDependencies = (
+				9844AD1B2A2821ED0046FFE7 /* Alamofire */,
+				9844AD272A2836300046FFE7 /* Realm */,
+				9844AD292A2836300046FFE7 /* RealmSwift */,
+			);
 			productName = iPexel;
 			productReference = 9844ACEB2A271ECB0046FFE7 /* iPexel.app */;
 			productType = "com.apple.product-type.application";
@@ -193,6 +242,10 @@
 				Base,
 			);
 			mainGroup = 9844ACE22A271ECB0046FFE7;
+			packageReferences = (
+				9844AD1A2A2821ED0046FFE7 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				9844AD262A2836300046FFE7 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 9844ACEC2A271ECB0046FFE7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -220,11 +273,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				9844ACF12A271ECB0046FFE7 /* ContentView.swift in Sources */,
-				9844AD172A27415E0046FFE7 /* Image.swift in Sources */,
+				9844AD172A27415E0046FFE7 /* ImageVo.swift in Sources */,
 				9844AD052A272BAB0046FFE7 /* SearchMainView.swift in Sources */,
 				9844AD0A2A2738CA0046FFE7 /* ImageSearchView.swift in Sources */,
 				9844AD0E2A27399F0046FFE7 /* ViewExtension.swift in Sources */,
+				9844AD1E2A2822B30046FFE7 /* ImageSearchApi.swift in Sources */,
 				9844ACEF2A271ECB0046FFE7 /* iPexelApp.swift in Sources */,
+				9844AD2F2A285E9E0046FFE7 /* ImageSearchModel.swift in Sources */,
+				9844AD202A2822C00046FFE7 /* ImageSearchRepository.swift in Sources */,
+				9844AD232A2828F30046FFE7 /* ImageDto.swift in Sources */,
 				9844AD082A272BD40046FFE7 /* PopularMainView.swift in Sources */,
 				9844AD012A2728770046FFE7 /* MainTabView.swift in Sources */,
 			);
@@ -358,11 +415,13 @@
 				DEVELOPMENT_TEAM = K4EPMTZL7V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iPexel/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -387,11 +446,13 @@
 				DEVELOPMENT_TEAM = K4EPMTZL7V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iPexel/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -427,6 +488,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9844AD1A2A2821ED0046FFE7 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.4;
+			};
+		};
+		9844AD262A2836300046FFE7 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9844AD1B2A2821ED0046FFE7 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9844AD1A2A2821ED0046FFE7 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		9844AD272A2836300046FFE7 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9844AD262A2836300046FFE7 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		9844AD292A2836300046FFE7 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9844AD262A2836300046FFE7 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9844ACE32A271ECB0046FFE7 /* Project object */;
 }
