@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Image: Codable {
+struct ImageVo {
     let id: Int
     let width: Int
     let height: Int
@@ -15,12 +15,12 @@ struct Image: Codable {
     let photographer: String
     let photographerUrl: String
     let avgColor: String
-    let src: ImageSrc
+    let src: ImageSrcVo
     let liked: Bool
     let alt: String
 }
 
-struct ImageSrc: Codable {
+struct ImageSrcVo {
     let original: String
     let large2x: String
     let large: String

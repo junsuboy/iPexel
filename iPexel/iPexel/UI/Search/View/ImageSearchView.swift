@@ -37,7 +37,6 @@ struct ImageSearchView: View {
 }
 
 struct SearchBar: View {
-    
     @Binding var text: String
  
     var body: some View {
