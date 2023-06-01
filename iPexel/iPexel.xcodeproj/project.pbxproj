@@ -120,6 +120,7 @@
 		9844AD122A2740A90046FFE7 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				9844AD192A281F770046FFE7 /* Network */,
 				9844AD142A2740D80046FFE7 /* Repository */,
 				9844AD152A2740E00046FFE7 /* Entity */,
 			);
@@ -139,6 +140,13 @@
 				9844AD162A27415E0046FFE7 /* Image.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		9844AD192A281F770046FFE7 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
