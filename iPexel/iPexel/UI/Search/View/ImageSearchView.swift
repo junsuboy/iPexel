@@ -28,6 +28,35 @@ struct ImageSearchView: View {
                         })
                     }
                 }
+                if model.photos.count > 0 {
+                    HStack() {
+                        if model.page > 1 {
+                            Button {
+                                print("Prev")
+                                model.page = model.page - 1
+                                model.photos = []
+                                model.searchImage(searchText: searchText, page: model.page)
+                            } label: {
+                                Image(systemName: "arrow.left")
+                                Text("Prev")
+                            }
+                        }
+                        
+                        Spacer()
+                        
+                        if model.photos.count > 0 && model.photos.count == 15 {
+                            Button {
+                                print("Next")
+                                model.page = model.page + 1
+                                model.photos = []
+                                model.searchImage(searchText: searchText, page: model.page)
+                            } label: {
+                                Image(systemName: "arrow.right")
+                                Text("Next")
+                            }
+                        }
+                    }
+                }
             }
             Spacer()
         }
@@ -49,8 +78,9 @@ struct SearchBar: View {
                 TextField("Search", text: $text)
                     .foregroundColor(.primary)
                     .onSubmit {
+                        model.page = 1
                         model.photos = []
-                        model.searchImage(searchText: text, page: 1)
+                        model.searchImage(searchText: text, page: model.page)
                     }
                     .submitLabel(.search)
                 

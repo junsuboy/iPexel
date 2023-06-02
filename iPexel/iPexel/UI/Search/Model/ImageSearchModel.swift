@@ -13,6 +13,7 @@ class ImageSearchModel: ObservableObject {
     var subscriptions = Set<AnyCancellable>()
     
     @Published var photos: [ResponseImagePhoto] = []
+    @Published var page: Int = 1
     
     func searchImage(searchText: String, page: Int) {
         repository.searchImage(searchText: searchText, page: page)
