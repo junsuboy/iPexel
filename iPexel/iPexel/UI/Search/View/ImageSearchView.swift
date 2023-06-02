@@ -19,14 +19,12 @@ struct ImageSearchView: View {
                 .environmentObject(model)
             ScrollView {
                 ForEach(model.photos, id: \.id) { photo in
-                    NavigationLink(destination: ImageSearchDetailView(photo: photo)) {
+                    NavigationLink(destination: ImageSearchDetailView(title: searchText, photo: photo)) {
                         AsyncImage(url: URL(string: photo.src.original), content: { image in
                             image.resizable()
                                 .aspectRatio(contentMode: .fit)
                         }, placeholder: {
-                            ProgressView()
-                                .progressViewStyle(CircularProgressViewStyle(tint: .black))
-                                .scaleEffect(3)
+                            
                         })
                     }
                 }

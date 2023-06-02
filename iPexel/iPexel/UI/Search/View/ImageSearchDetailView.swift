@@ -11,6 +11,7 @@ import Alamofire
 struct ImageSearchDetailView: View {
     @State var isShowAlert = false
     
+    var title: String
     var photo: ResponseImagePhoto
     
     var body: some View {
@@ -19,15 +20,29 @@ struct ImageSearchDetailView: View {
                 image.resizable()
                     .aspectRatio(contentMode: .fit)
             }, placeholder: {
-                ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle(tint: .black))
-                    .scaleEffect(3)
+                EmptyView()
             })
             .onTapGesture {
                 isShowAlert = true
             }
+            HStack() {
+                VStack(alignment: .leading) {
+                    Text("name")
+                        .fontWeight(.bold)
+                    Text("photographer")
+                        .fontWeight(.bold)
+                }
+                Spacer()
+                VStack(alignment: .trailing) {
+                    Text(photo.alt)
+                        .lineLimit(1)
+                    Text(photo.photographer)
+                        .lineLimit(1)
+                }
+            }
             Spacer()
         }
+        .navigationTitle(title)
         .alert("Save This Image", isPresented: $isShowAlert) {
             Button("cancel", role: .cancel) {}
             Button("save") {
