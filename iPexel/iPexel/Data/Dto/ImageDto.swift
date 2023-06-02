@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ResponseImage: Codable {
+struct ResponseImage: Codable, Hashable {
     let page: Int
     let perPage: Int
     let photos: [ResponseImagePhoto]
@@ -19,7 +19,7 @@ struct ResponseImage: Codable {
     }
 }
 
-struct ResponseImagePhoto: Codable {
+struct ResponseImagePhoto: Codable, Hashable, Identifiable {
     let id: Int
     let width: Int
     let height: Int
@@ -46,7 +46,7 @@ struct ResponseImagePhoto: Codable {
     
 }
 
-struct ResponseImagePhotoSrc: Codable {
+struct ResponseImagePhotoSrc: Codable, Hashable {
     let original: String
     let large2x: String
     let large: String

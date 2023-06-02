@@ -24,6 +24,8 @@
 		9844AD282A2836300046FFE7 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 9844AD272A2836300046FFE7 /* Realm */; };
 		9844AD2A2A2836300046FFE7 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9844AD292A2836300046FFE7 /* RealmSwift */; };
 		9844AD2F2A285E9E0046FFE7 /* ImageSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9844AD2E2A285E9E0046FFE7 /* ImageSearchModel.swift */; };
+		98724D982A29733500B0CACA /* ImageSearchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98724D972A29733500B0CACA /* ImageSearchDetailView.swift */; };
+		98724D9A2A29804C00B0CACA /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98724D992A29804C00B0CACA /* ColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		9844AD222A2828F30046FFE7 /* ImageDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDto.swift; sourceTree = "<group>"; };
 		9844AD2D2A28554A0046FFE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9844AD2E2A285E9E0046FFE7 /* ImageSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchModel.swift; sourceTree = "<group>"; };
+		98724D972A29733500B0CACA /* ImageSearchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchDetailView.swift; sourceTree = "<group>"; };
+		98724D992A29804C00B0CACA /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				9844AD0D2A27399F0046FFE7 /* ViewExtension.swift */,
+				98724D992A29804C00B0CACA /* ColorExtension.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 			children = (
 				9844AD042A272BAB0046FFE7 /* SearchMainView.swift */,
 				9844AD092A2738CA0046FFE7 /* ImageSearchView.swift */,
+				98724D972A29733500B0CACA /* ImageSearchDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -277,6 +283,7 @@
 				9844AD052A272BAB0046FFE7 /* SearchMainView.swift in Sources */,
 				9844AD0A2A2738CA0046FFE7 /* ImageSearchView.swift in Sources */,
 				9844AD0E2A27399F0046FFE7 /* ViewExtension.swift in Sources */,
+				98724D9A2A29804C00B0CACA /* ColorExtension.swift in Sources */,
 				9844AD1E2A2822B30046FFE7 /* ImageSearchApi.swift in Sources */,
 				9844ACEF2A271ECB0046FFE7 /* iPexelApp.swift in Sources */,
 				9844AD2F2A285E9E0046FFE7 /* ImageSearchModel.swift in Sources */,
@@ -284,6 +291,7 @@
 				9844AD232A2828F30046FFE7 /* ImageDto.swift in Sources */,
 				9844AD082A272BD40046FFE7 /* PopularMainView.swift in Sources */,
 				9844AD012A2728770046FFE7 /* MainTabView.swift in Sources */,
+				98724D982A29733500B0CACA /* ImageSearchDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

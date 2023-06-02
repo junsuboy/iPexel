@@ -18,7 +18,11 @@ class ImageSearchModel: ObservableObject {
         repository.searchImage(searchText: searchText, page: page)
             .sink(
                 receiveCompletion: { completion in
-                    print(completion)
+                    switch completion {
+                    case .failure(let error): print("Error \(error)")
+                    case .finished: print("Publisher is finished")
+                    }
+
                 },
                 receiveValue: { value in
                     self.photos = value
