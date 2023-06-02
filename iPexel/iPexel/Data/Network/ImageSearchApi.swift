@@ -10,7 +10,7 @@ import Combine
 
 class ImageSearchApi {
     let header: HTTPHeaders = [
-        "Authorization": "TMBuhfB9RcMEHUP3tWZVBZ6uKG04CGoRrAvvqrH7CPUXy3t1RavAFbWp"
+        "Authorization": "API Key"
     ]
     
     func searchImage(searchText: String, page: Int) -> Future<[ResponseImagePhoto], Error> {
