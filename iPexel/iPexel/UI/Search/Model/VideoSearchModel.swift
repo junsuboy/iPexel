@@ -1,14 +1,14 @@
 //
-//  ImageSearchModel.swift
+//  VideoSearchModel.swift
 //  iPexel
 //
-//  Created by mobile_ on 2023/06/01.
+//  Created by mobile_ on 2023/06/07.
 //
 
 import Foundation
 import Combine
 
-class ImageSearchModel: ObservableObject {
+class VideoSearchModel: ObservableObject {
     let repository: SearchRepository = SearchRepository()
     var subscriptions = Set<AnyCancellable>()
     

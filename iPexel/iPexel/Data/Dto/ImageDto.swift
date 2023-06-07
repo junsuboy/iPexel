@@ -31,7 +31,7 @@ struct ResponseImagePhoto: Codable, Hashable, Identifiable {
     let liked: Bool
     let alt: String
     
-    enum CodingKeys : String, CodingKey{
+    enum CodingKeys : String, CodingKey {
         case id
         case width
         case height

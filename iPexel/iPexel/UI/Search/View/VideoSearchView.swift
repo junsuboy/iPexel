@@ -1,27 +1,27 @@
 //
-//  ImageSearchView.swift
+//  VideoSearchView.swift
 //  iPexel
 //
-//  Created by mobile_ on 2023/05/31.
+//  Created by mobile_ on 2023/06/07.
 //
 
 import SwiftUI
 
-struct ImageSearchView: View {
+struct VideoSearchView: View {
     @State private var searchText = ""
-    @StateObject var model: ImageSearchModel = ImageSearchModel()
+    @StateObject var model: VideoSearchModel = VideoSearchModel()
     @State private var isSearched = false
     
     
     var body: some View {
         VStack {
-            ImageSearchBar(text: $searchText)
+            VideoSearchBar(text: $searchText)
                 .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
                 .environmentObject(model)
             ScrollView {
                 if model.photos.count != 0 {
                     ForEach(model.photos, id: \.id) { photo in
-                        NavigationLink(destination: ImageSearchDetailView(title: searchText, photo: photo)) {
+                        NavigationLink(destination: VideoSearchDetailView(title: searchText, photo: photo)) {
                             AsyncImage(url: URL(string: photo.src.original), content: { image in
                                 image.resizable()
                                     .aspectRatio(contentMode: .fit)
@@ -74,7 +74,7 @@ struct ImageSearchView: View {
     }
 }
 
-struct ImageSearchBar: View {
+struct VideoSearchBar: View {
     @Binding var text: String
     @EnvironmentObject var model: ImageSearchModel
     

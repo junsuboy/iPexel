@@ -1,5 +1,5 @@
 //
-//  ImageSearchApi.swift
+//  SearchApi.swift
 //  iPexel
 //
 //  Created by mobile_ on 2023/06/01.
@@ -8,7 +8,7 @@
 import Alamofire
 import Combine
 
-class ImageSearchApi {
+class SearchApi {
     let header: HTTPHeaders = [
         "Authorization": "API KEY"
     ]
@@ -23,7 +23,7 @@ class ImageSearchApi {
                         if let images = response.value {
                             promise(.success(images.photos))
                         } else {
-                            promise(.failure(ImageApiError.UNKNOWNERROR))
+                            promise(.failure(SearchApiError.UNKNOWNERROR))
                         }
                     case .failure(let error):
                         promise(.failure(error))
@@ -33,6 +33,6 @@ class ImageSearchApi {
     }
 }
 
-enum ImageApiError: Error {
+enum SearchApiError: Error {
 case UNKNOWNERROR
 }

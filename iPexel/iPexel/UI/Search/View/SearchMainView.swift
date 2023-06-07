@@ -18,7 +18,7 @@ struct SearchMainView: View {
             case 0:
                 ImageSearchView()
             case 1:
-                Text("Video!")
+                VideoSearchView()
             default:
                 EmptyView()
             }
