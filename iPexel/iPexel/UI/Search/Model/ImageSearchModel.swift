@@ -14,6 +14,7 @@ class ImageSearchModel: ObservableObject {
     
     @Published var photos: [ResponseImagePhoto] = []
     @Published var page: Int = 1
+    @Published var isSearched: Bool = false
     
     func searchImage(searchText: String, page: Int) {
         repository.searchImage(searchText: searchText, page: page)
@@ -27,6 +28,7 @@ class ImageSearchModel: ObservableObject {
                 },
                 receiveValue: { value in
                     self.photos = value
+                    self.isSearched = true
                 }
             )
             .store(in: &subscriptions)

@@ -10,6 +10,7 @@ import SwiftUI
 struct ImageSearchView: View {
     @State private var searchText = ""
     @StateObject var model: ImageSearchModel = ImageSearchModel()
+    @State private var isSearched = false
     
     
     var body: some View {
@@ -18,16 +19,23 @@ struct ImageSearchView: View {
                 .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
                 .environmentObject(model)
             ScrollView {
-                ForEach(model.photos, id: \.id) { photo in
-                    NavigationLink(destination: ImageSearchDetailView(title: searchText, photo: photo)) {
-                        AsyncImage(url: URL(string: photo.src.original), content: { image in
-                            image.resizable()
-                                .aspectRatio(contentMode: .fit)
-                        }, placeholder: {
-                            
-                        })
+                if model.photos.count != 0 {
+                    ForEach(model.photos, id: \.id) { photo in
+                        NavigationLink(destination: ImageSearchDetailView(title: searchText, photo: photo)) {
+                            AsyncImage(url: URL(string: photo.src.original), content: { image in
+                                image.resizable()
+                                    .aspectRatio(contentMode: .fit)
+                            }, placeholder: {
+                                
+                            })
+                        }
                     }
+                } else if model.photos.count == 0 && model.isSearched {
+                    Image("noresult")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
                 }
+                
                 if model.photos.count > 0 {
                     HStack() {
                         if model.page > 1 {
