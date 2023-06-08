@@ -62,7 +62,7 @@ struct ResponseVideoFile: Codable, Hashable, Identifiable {
     let fileType: String
     let width: Int
     let height: Int
-    let fps: Double
+    let fps: Double?
     let link: String
     
     enum CodingKeys : String, CodingKey {

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Alamofire
+import AVKit
 
 struct VideoSearchDetailView: View {
     @State var isShowAlert = false
@@ -25,6 +26,8 @@ struct VideoSearchDetailView: View {
 //            .onTapGesture {
 //                isShowAlert = true
 //            }
+            VideoPlayer(player: AVPlayer(url:  URL(string: video.url)!))
+                .frame(height: 400)
             HStack() {
                 Text("photographer")
                     .fontWeight(.bold)

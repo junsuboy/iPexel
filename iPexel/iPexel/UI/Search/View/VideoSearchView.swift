@@ -21,9 +21,15 @@ struct VideoSearchView: View {
             ScrollView {
                 if model.videos.count != 0 {
                     ForEach(model.videos, id: \.id) { video in
-                        Text(video.url)
-                    
+                        NavigationLink(destination: VideoSearchDetailView(title: searchText, video: video)) {
+                            AsyncImage(url: URL(string: video.image), content: { image in
+                                image.resizable()
+                                    .aspectRatio(contentMode: .fit)
+                            }, placeholder: {
+                                
+                            })
                         }
+                    }
                 } else if model.videos.count == 0 && model.isSearched {
                     Image("noresult")
                         .resizable()
