@@ -31,6 +31,26 @@ class SearchApi {
                 }
         }
     }
+    
+    
+    func searchVideo(searchText: String, page: Int) -> Future<[ResponseVideoSource], Error> {
+        return Future<[ResponseVideoSource], Error> { promise in
+            let parameters = ["query": searchText, "page": page] as [String : Any]
+            AF.request("https://api.pexels.com/video/search", parameters: parameters, headers: self.header)
+                .responseDecodable(of: ResponseVideo.self) { response in
+                    switch response.result {
+                    case .success:
+                        if let images = response.value {
+                            promise(.success(images.videos))
+                        } else {
+                            promise(.failure(SearchApiError.UNKNOWNERROR))
+                        }
+                    case .failure(let error):
+                        promise(.failure(error))
+                    }
+                }
+        }
+    }
 }
 
 enum SearchApiError: Error {

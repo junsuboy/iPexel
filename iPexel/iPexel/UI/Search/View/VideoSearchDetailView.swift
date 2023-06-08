@@ -12,41 +12,33 @@ struct VideoSearchDetailView: View {
     @State var isShowAlert = false
     
     var title: String
-    var photo: ResponseImagePhoto
+    var video: ResponseVideoSource
     
     var body: some View {
         VStack(spacing: 20) {
-            AsyncImage(url: URL(string: photo.src.original), content: { image in
-                image.resizable()
-                    .aspectRatio(contentMode: .fit)
-            }, placeholder: {
-                EmptyView()
-            })
-            .onTapGesture {
-                isShowAlert = true
-            }
+//            AsyncImage(url: URL(string: photo.src.original), content: { image in
+//                image.resizable()
+//                    .aspectRatio(contentMode: .fit)
+//            }, placeholder: {
+//                EmptyView()
+//            })
+//            .onTapGesture {
+//                isShowAlert = true
+//            }
             HStack() {
-                VStack(alignment: .leading) {
-                    Text("name")
-                        .fontWeight(.bold)
-                    Text("photographer")
-                        .fontWeight(.bold)
-                }
+                Text("photographer")
+                    .fontWeight(.bold)
                 Spacer()
-                VStack(alignment: .trailing) {
-                    Text(photo.alt)
-                        .lineLimit(1)
-                    Text(photo.photographer)
-                        .lineLimit(1)
-                }
+                Text(video.user.name)
+                    .lineLimit(1)
             }
             Spacer()
         }
         .navigationTitle(title)
-        .alert("Save This Image", isPresented: $isShowAlert) {
+        .alert("Save This Video", isPresented: $isShowAlert) {
             Button("cancel", role: .cancel) {}
             Button("save") {
-                downloadImage(url: photo.src.original)
+//                downloadImage(url: photo.src.original)
             }
         }
     }

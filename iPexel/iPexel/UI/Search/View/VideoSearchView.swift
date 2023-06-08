@@ -19,31 +19,25 @@ struct VideoSearchView: View {
                 .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
                 .environmentObject(model)
             ScrollView {
-                if model.photos.count != 0 {
-                    ForEach(model.photos, id: \.id) { photo in
-                        NavigationLink(destination: VideoSearchDetailView(title: searchText, photo: photo)) {
-                            AsyncImage(url: URL(string: photo.src.original), content: { image in
-                                image.resizable()
-                                    .aspectRatio(contentMode: .fit)
-                            }, placeholder: {
-                                
-                            })
+                if model.videos.count != 0 {
+                    ForEach(model.videos, id: \.id) { video in
+                        Text(video.url)
+                    
                         }
-                    }
-                } else if model.photos.count == 0 && model.isSearched {
+                } else if model.videos.count == 0 && model.isSearched {
                     Image("noresult")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                 }
                 
-                if model.photos.count > 0 {
+                if model.videos.count > 0 {
                     HStack() {
                         if model.page > 1 {
                             Button {
                                 print("Prev")
                                 model.page = model.page - 1
-                                model.photos = []
-                                model.searchImage(searchText: searchText, page: model.page)
+                                model.videos = []
+                                model.searchVideo(searchText: searchText, page: model.page)
                             } label: {
                                 Image(systemName: "arrow.left")
                                 Text("Prev")
@@ -52,12 +46,12 @@ struct VideoSearchView: View {
                         
                         Spacer()
                         
-                        if model.photos.count > 0 && model.photos.count == 15 {
+                        if model.videos.count > 0 && model.videos.count == 15 {
                             Button {
                                 print("Next")
                                 model.page = model.page + 1
-                                model.photos = []
-                                model.searchImage(searchText: searchText, page: model.page)
+                                model.videos = []
+                                model.searchVideo(searchText: searchText, page: model.page)
                             } label: {
                                 Image(systemName: "arrow.right")
                                 Text("Next")
@@ -76,7 +70,7 @@ struct VideoSearchView: View {
 
 struct VideoSearchBar: View {
     @Binding var text: String
-    @EnvironmentObject var model: ImageSearchModel
+    @EnvironmentObject var model: VideoSearchModel
     
     var body: some View {
         HStack {
@@ -87,8 +81,8 @@ struct VideoSearchBar: View {
                     .foregroundColor(.primary)
                     .onSubmit {
                         model.page = 1
-                        model.photos = []
-                        model.searchImage(searchText: text, page: model.page)
+                        model.videos = []
+                        model.searchVideo(searchText: text, page: model.page)
                     }
                     .submitLabel(.search)
                 

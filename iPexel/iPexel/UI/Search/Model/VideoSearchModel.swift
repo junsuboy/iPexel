@@ -12,12 +12,12 @@ class VideoSearchModel: ObservableObject {
     let repository: SearchRepository = SearchRepository()
     var subscriptions = Set<AnyCancellable>()
     
-    @Published var photos: [ResponseImagePhoto] = []
+    @Published var videos: [ResponseVideoSource] = []
     @Published var page: Int = 1
     @Published var isSearched: Bool = false
     
-    func searchImage(searchText: String, page: Int) {
-        repository.searchImage(searchText: searchText, page: page)
+    func searchVideo(searchText: String, page: Int) {
+        repository.searchVideo(searchText: searchText, page: page)
             .sink(
                 receiveCompletion: { completion in
                     switch completion {
@@ -27,7 +27,7 @@ class VideoSearchModel: ObservableObject {
 
                 },
                 receiveValue: { value in
-                    self.photos = value
+                    self.videos = value
                     self.isSearched = true
                 }
             )
