@@ -10,7 +10,6 @@ import SwiftUI
 struct VideoSearchView: View {
     @State private var searchText = ""
     @StateObject var model: VideoSearchModel = VideoSearchModel()
-    @State private var isSearched = false
     
     
     var body: some View {
@@ -86,6 +85,7 @@ struct VideoSearchBar: View {
                 TextField("Search", text: $text)
                     .foregroundColor(.primary)
                     .onSubmit {
+                        model.isSearched = false
                         model.page = 1
                         model.videos = []
                         model.searchVideo(searchText: text, page: model.page)

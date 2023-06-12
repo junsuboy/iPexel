@@ -17,40 +17,41 @@ struct VideoSearchDetailView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-//            AsyncImage(url: URL(string: photo.src.original), content: { image in
-//                image.resizable()
-//                    .aspectRatio(contentMode: .fit)
-//            }, placeholder: {
-//                EmptyView()
-//            })
-//            .onTapGesture {
-//                isShowAlert = true
-//            }
-            VideoPlayer(player: AVPlayer(url:  URL(string: video.url)!))
+            
+            VideoPlayer(player: AVPlayer(url:  URL(string: video.videoFiles[0].link)!))
                 .frame(height: 400)
+            
+            Button("Download Video") {
+                isShowAlert = true
+            }
+            .buttonStyle(.borderedProminent)
+            
             HStack() {
                 Text("photographer")
                     .fontWeight(.bold)
+                
                 Spacer()
+                
                 Text(video.user.name)
                     .lineLimit(1)
             }
             Spacer()
+            
         }
         .navigationTitle(title)
         .alert("Save This Video", isPresented: $isShowAlert) {
             Button("cancel", role: .cancel) {}
             Button("save") {
-//                downloadImage(url: photo.src.original)
+                downloadVideo(url: video.videoFiles[0].link)
             }
         }
     }
     
-    func downloadImage(url: String) {
+    func downloadVideo(url: String) {
         let destination: DownloadRequest.Destination = { _, _ in
             let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
             let uuid = "\(UUID())"
-            let fileURL = documentsURL.appendingPathComponent(uuid + ".jpeg")
+            let fileURL = documentsURL.appendingPathComponent(uuid + ".mp4")
 
             return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
         }

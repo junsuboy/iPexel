@@ -22,9 +22,12 @@ struct ImageSearchDetailView: View {
             }, placeholder: {
                 EmptyView()
             })
-            .onTapGesture {
+            
+            Button("Download Image") {
                 isShowAlert = true
             }
+            .buttonStyle(.borderedProminent)
+            
             HStack() {
                 VStack(alignment: .leading) {
                     Text("name")

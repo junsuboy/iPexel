@@ -10,7 +10,6 @@ import SwiftUI
 struct ImageSearchView: View {
     @State private var searchText = ""
     @StateObject var model: ImageSearchModel = ImageSearchModel()
-    @State private var isSearched = false
     
     
     var body: some View {
@@ -86,6 +85,7 @@ struct ImageSearchBar: View {
                 TextField("Search", text: $text)
                     .foregroundColor(.primary)
                     .onSubmit {
+                        model.isSearched = false
                         model.page = 1
                         model.photos = []
                         model.searchImage(searchText: text, page: model.page)
