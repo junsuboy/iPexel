@@ -40,6 +40,7 @@ struct ImageSearchView: View {
                         if model.page > 1 {
                             Button {
                                 print("Prev")
+                                model.isSearched = false
                                 model.page = model.page - 1
                                 model.photos = []
                                 model.searchImage(searchText: searchText, page: model.page)
@@ -54,6 +55,7 @@ struct ImageSearchView: View {
                         if model.photos.count > 0 && model.photos.count == 15 {
                             Button {
                                 print("Next")
+                                model.isSearched = false
                                 model.page = model.page + 1
                                 model.photos = []
                                 model.searchImage(searchText: searchText, page: model.page)

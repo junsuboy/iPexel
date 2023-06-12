@@ -40,6 +40,7 @@ struct VideoSearchView: View {
                         if model.page > 1 {
                             Button {
                                 print("Prev")
+                                model.isSearched = false
                                 model.page = model.page - 1
                                 model.videos = []
                                 model.searchVideo(searchText: searchText, page: model.page)
@@ -54,6 +55,7 @@ struct VideoSearchView: View {
                         if model.videos.count > 0 && model.videos.count == 15 {
                             Button {
                                 print("Next")
+                                model.isSearched = false
                                 model.page = model.page + 1
                                 model.videos = []
                                 model.searchVideo(searchText: searchText, page: model.page)
