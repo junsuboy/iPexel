@@ -1,5 +1,5 @@
 //
-//  SearchApi.swift
+//  PexelApi.swift
 //  iPexel
 //
 //  Created by mobile_ on 2023/06/01.
@@ -8,7 +8,7 @@
 import Alamofire
 import Combine
 
-class SearchApi {
+class PexelApi {
     let header: HTTPHeaders = [
         "Authorization": "API KEY"
     ]

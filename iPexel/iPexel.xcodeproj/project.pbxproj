@@ -18,7 +18,7 @@
 		9844AD0E2A27399F0046FFE7 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9844AD0D2A27399F0046FFE7 /* ViewExtension.swift */; };
 		9844AD172A27415E0046FFE7 /* ImageVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9844AD162A27415E0046FFE7 /* ImageVo.swift */; };
 		9844AD1C2A2821ED0046FFE7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 9844AD1B2A2821ED0046FFE7 /* Alamofire */; };
-		9844AD1E2A2822B30046FFE7 /* SearchApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9844AD1D2A2822B30046FFE7 /* SearchApi.swift */; };
+		9844AD1E2A2822B30046FFE7 /* PexelApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9844AD1D2A2822B30046FFE7 /* PexelApi.swift */; };
 		9844AD202A2822C00046FFE7 /* SearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9844AD1F2A2822C00046FFE7 /* SearchRepository.swift */; };
 		9844AD232A2828F30046FFE7 /* ImageDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9844AD222A2828F30046FFE7 /* ImageDto.swift */; };
 		9844AD282A2836300046FFE7 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 9844AD272A2836300046FFE7 /* Realm */; };
@@ -44,7 +44,7 @@
 		9844AD092A2738CA0046FFE7 /* ImageSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchView.swift; sourceTree = "<group>"; };
 		9844AD0D2A27399F0046FFE7 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		9844AD162A27415E0046FFE7 /* ImageVo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVo.swift; sourceTree = "<group>"; };
-		9844AD1D2A2822B30046FFE7 /* SearchApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchApi.swift; sourceTree = "<group>"; };
+		9844AD1D2A2822B30046FFE7 /* PexelApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelApi.swift; sourceTree = "<group>"; };
 		9844AD1F2A2822C00046FFE7 /* SearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepository.swift; sourceTree = "<group>"; };
 		9844AD222A2828F30046FFE7 /* ImageDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDto.swift; sourceTree = "<group>"; };
 		9844AD2D2A28554A0046FFE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -176,7 +176,7 @@
 		9844AD192A281F770046FFE7 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				9844AD1D2A2822B30046FFE7 /* SearchApi.swift */,
+				9844AD1D2A2822B30046FFE7 /* PexelApi.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -298,7 +298,7 @@
 				98A40F242A307AE200089D37 /* VideoSearchView.swift in Sources */,
 				98724D9A2A29804C00B0CACA /* ColorExtension.swift in Sources */,
 				98A40F2A2A307CBF00089D37 /* VideoDto.swift in Sources */,
-				9844AD1E2A2822B30046FFE7 /* SearchApi.swift in Sources */,
+				9844AD1E2A2822B30046FFE7 /* PexelApi.swift in Sources */,
 				9844ACEF2A271ECB0046FFE7 /* iPexelApp.swift in Sources */,
 				9844AD2F2A285E9E0046FFE7 /* ImageSearchModel.swift in Sources */,
 				9844AD202A2822C00046FFE7 /* SearchRepository.swift in Sources */,

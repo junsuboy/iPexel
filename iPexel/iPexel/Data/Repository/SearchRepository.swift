@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 class SearchRepository {
-    let api: SearchApi = SearchApi()
+    let api: PexelApi = PexelApi()
     
     func searchImage(searchText: String, page: Int) -> Future<[ResponseImagePhoto], Error> {
         return api.searchImage(searchText: searchText, page: page)
