@@ -5,12 +5,13 @@
 //  Created by mobile_ on 2023/06/01.
 //
 
+import Foundation
 import Alamofire
 import Combine
 
 class PexelApi {
     let header: HTTPHeaders = [
-        "Authorization": "API KEY"
+        "Authorization": Bundle.main.object(forInfoDictionaryKey: "API_KEY") as? String ?? ""
     ]
     
     func searchImage(searchText: String, page: Int) -> Future<[ResponseImagePhoto], Error> {
