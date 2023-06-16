@@ -7,7 +7,8 @@ iOS Application for testing 'Pexel' API
 [- 이미지 검색 및 저장 기능](https://www.pexels.com/api/documentation/#photos-search)
 
 
-[- 비디오 검색 및 저장 기능]
+[- 비디오 검색 및 저장 기능](https://www.pexels.com/api/documentation/#videos-search)
+
 
 ![RPReplay_Final1686906510](https://github.com/junsuboy/iPexel/assets/86935775/873cea01-ca48-4647-8fde-a6b366144bbe)
 
@@ -19,5 +20,6 @@ iOS Application for testing 'Pexel' API
 
 
 [- 인기 비디오 모음 및 저장](https://www.pexels.com/api/documentation/#videos-popular)
+
 
 ![RPReplay_Final1686906560](https://github.com/junsuboy/iPexel/assets/86935775/b992e74f-4ea5-469f-b2a9-545648e2615a)
