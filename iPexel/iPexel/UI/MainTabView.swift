@@ -23,7 +23,6 @@ struct MainTabView: View {
                         Image(systemName: "flame")
                         Text("Popular")
                     }
-                    .badge(1)
                     .toolbar(.visible, for: .tabBar)
                     .toolbarBackground(Color.white, for: .tabBar)
             }

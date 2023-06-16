@@ -1,18 +1,17 @@
 //
-//  VideoSearchDetailView.swift
+//  VideoPopularDetailView.swift
 //  iPexel
 //
-//  Created by mobile_ on 2023/06/07.
+//  Created by mobile_ on 2023/06/16.
 //
 
 import SwiftUI
 import Alamofire
 import AVKit
 
-struct VideoSearchDetailView: View {
+struct VideoPopularDetailView: View {
     @State var isShowAlert = false
     
-    @Binding var title: String
     var video: ResponseVideoSource
     
     var body: some View {
@@ -38,7 +37,7 @@ struct VideoSearchDetailView: View {
             Spacer()
             
         }
-        .navigationTitle(title)
+        .navigationTitle("Detail")
         .alert("Save This Video", isPresented: $isShowAlert) {
             Button("cancel", role: .cancel) {}
             Button("save") {

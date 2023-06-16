@@ -20,7 +20,7 @@ struct ImageSearchView: View {
             ScrollView {
                 if model.photos.count != 0 {
                     ForEach(model.photos, id: \.id) { photo in
-                        NavigationLink(destination: ImageSearchDetailView(title: searchText, photo: photo)) {
+                        NavigationLink(destination: ImageSearchDetailView(title: $searchText, photo: photo)) {
                             AsyncImage(url: URL(string: photo.src.original), content: { image in
                                 image.resizable()
                                     .aspectRatio(contentMode: .fit)

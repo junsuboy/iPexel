@@ -5,8 +5,8 @@
 //  Created by mobile_ on 2023/06/01.
 //
 
-import Foundation
 import Combine
+import Foundation
 
 class SearchRepository {
     let api: PexelApi = PexelApi()

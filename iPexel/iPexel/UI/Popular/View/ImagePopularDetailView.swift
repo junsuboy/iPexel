@@ -1,17 +1,16 @@
 //
-//  ImageSearchDetailView.swift
+//  ImagePopularDetailView.swift
 //  iPexel
 //
-//  Created by mobile_ on 2023/06/02.
+//  Created by mobile_ on 2023/06/16.
 //
 
 import SwiftUI
 import Alamofire
 
-struct ImageSearchDetailView: View {
+struct ImagePopularDetailView: View {
     @State var isShowAlert = false
     
-    @Binding var title: String
     var photo: ResponseImagePhoto
     
     var body: some View {
@@ -45,7 +44,7 @@ struct ImageSearchDetailView: View {
             }
             Spacer()
         }
-        .navigationTitle(title)
+        .navigationTitle("Detail")
         .alert("Save This Image", isPresented: $isShowAlert) {
             Button("cancel", role: .cancel) {}
             Button("save") {
@@ -70,3 +69,4 @@ struct ImageSearchDetailView: View {
         print("download complete!")
     }
 }
+
