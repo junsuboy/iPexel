@@ -1,9 +1,9 @@
 # iPexel
 iOS Application for testing 'Pexel' API
 
-- 이미지 검색 기능
-<img src="https://github.com/junsuboy/iPexel/assets/86935775/50417747-8538-4f48-baa5-10a0ee440d60" width = "30%" height = "30%">
+1. Search Tab
+![RPReplay_Final1686906510](https://github.com/junsuboy/iPexel/assets/86935775/873cea01-ca48-4647-8fde-a6b366144bbe)
 
-- 이미지 저장 기능
-- 비디오 검색 기능
-- 비디오 저장 기능
+
+2. Popular Tab
+![RPReplay_Final1686906560](https://github.com/junsuboy/iPexel/assets/86935775/b992e74f-4ea5-469f-b2a9-545648e2615a)
