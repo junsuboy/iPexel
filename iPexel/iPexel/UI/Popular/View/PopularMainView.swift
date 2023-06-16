@@ -29,13 +29,6 @@ struct PopularMainView: View {
     }
 }
 
-struct PopularMainView_Previews: PreviewProvider {
-    static var previews: some View {
-        PopularMainView()
-    }
-}
-
-
 struct PopularTabBarView: View {
     @Binding var currentTab: Int
     @Namespace var namespace

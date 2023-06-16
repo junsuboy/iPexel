@@ -36,8 +36,12 @@ struct ImagePopularDetailView: View {
                 }
                 Spacer()
                 VStack(alignment: .trailing) {
-                    Text(photo.alt)
-                        .lineLimit(1)
+                    if photo.alt != "" {
+                        Text(photo.alt)
+                            .lineLimit(1)
+                    } else {
+                        Text("Unnamed")
+                    }
                     Text(photo.photographer)
                         .lineLimit(1)
                 }

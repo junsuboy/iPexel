@@ -14,6 +14,7 @@ struct SearchMainView: View {
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
             SearchTabBarView(currentTab: $tabNumber)
+                .padding(.bottom, 20)
             switch tabNumber {
             case 0:
                 ImageSearchView()
@@ -24,12 +25,6 @@ struct SearchMainView: View {
             }
             Spacer()
         }
-    }
-}
-
-struct SearchMainView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchMainView()
     }
 }
 
